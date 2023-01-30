@@ -1,0 +1,61 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = JustPoteito
+build_property.RootNamespace = JustPoteito
+build_property.ProjectDir = C:\Users\txabe\OneDrive\Documents\Visual Studio Community Projects\JustPoteitoBlazor-genera_rework\JustPoteito\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\txabe\OneDrive\Documents\Visual Studio Community Projects\JustPoteitoBlazor-genera_rework\JustPoteito
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/txabe/OneDrive/Documents/Visual Studio Community Projects/JustPoteitoBlazor-genera_rework/JustPoteito/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/txabe/OneDrive/Documents/Visual Studio Community Projects/JustPoteitoBlazor-genera_rework/JustPoteito/Components/Create_Edit_User_Form.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDcmVhdGVfRWRpdF9Vc2VyX0Zvcm0ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/txabe/OneDrive/Documents/Visual Studio Community Projects/JustPoteitoBlazor-genera_rework/JustPoteito/Components/DeleteModal.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEZWxldGVNb2RhbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/txabe/OneDrive/Documents/Visual Studio Community Projects/JustPoteitoBlazor-genera_rework/JustPoteito/Components/EditUserModal.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xFZGl0VXNlck1vZGFsLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/txabe/OneDrive/Documents/Visual Studio Community Projects/JustPoteitoBlazor-genera_rework/JustPoteito/Components/GetUsers.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xHZXRVc2Vycy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/txabe/OneDrive/Documents/Visual Studio Community Projects/JustPoteitoBlazor-genera_rework/JustPoteito/Pages/CreateUser.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlVXNlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/txabe/OneDrive/Documents/Visual Studio Community Projects/JustPoteitoBlazor-genera_rework/JustPoteito/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/txabe/OneDrive/Documents/Visual Studio Community Projects/JustPoteitoBlazor-genera_rework/JustPoteito/Pages/UserList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlckxpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/txabe/OneDrive/Documents/Visual Studio Community Projects/JustPoteitoBlazor-genera_rework/JustPoteito/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/txabe/OneDrive/Documents/Visual Studio Community Projects/JustPoteitoBlazor-genera_rework/JustPoteito/Shared/Navbar.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdmJhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/txabe/OneDrive/Documents/Visual Studio Community Projects/JustPoteitoBlazor-genera_rework/JustPoteito/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 

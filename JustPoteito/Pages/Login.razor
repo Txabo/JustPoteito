@@ -1,0 +1,59 @@
+﻿@using JustPoteito.Models
+@using System.ComponentModel.DataAnnotations
+
+<!--<h1 class="login-title" >JustPoteito</h1>-->
+
+<EditForm EditContext=@editContext OnValidSubmit=@OnValidSubmit class="login-form">
+    <div class="d-flex justify-content-center logo-container">
+        <div class="mx-auto login-logo">
+            <img src="images/logo.png"/>
+        </div>
+    </div>
+    <DataAnnotationsValidator />
+    <div class="form-group mt-2">
+        <div>
+            <InputText placeholder="Email" @bind-Value="@user.email" class="form-control col-sm-3" />
+            <ValidationMessage For="@(() => user.email)" />
+        </div>
+    </div>
+    <div class="form-group mt-4">
+        <div>
+            <InputText type="password" placeholder="Password" @bind-Value="@user.password" class="form-control col-sm-3" />
+            <ValidationMessage For="@(() => user.password)" />
+        </div>
+    </div>
+    <div class="submit-button-container">
+        <button type="submit" class="btn btn-success mt-4"> 
+            <img class="submit-icon" src="images/right-arrow.svg" />
+        </button>
+    </div>
+</EditForm>
+
+@code {
+
+    [CascadingParameter] 
+    public AppState appState { get; set; }
+
+    protected UserForm user = new UserForm();
+
+    protected EditContext editContext;
+
+    protected override void OnInitialized()
+    {
+        editContext = new(user);
+    }
+
+    async void OnValidSubmit()
+    {
+        editContext.Validate();
+
+        var dictionary = new Dictionary<string, object>() {
+            { "mail", user.email },
+            { "password", user.password},
+            { "showNavigation", true },
+            { "target-component", "UserList"}
+        };
+
+        appState.ActionWithParameters?.Invoke(dictionary);
+    }
+}

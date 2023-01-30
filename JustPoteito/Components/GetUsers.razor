@@ -1,0 +1,88 @@
+﻿@using JustPoteito.Models;
+
+<div class="card text-center userCard mb-4">
+    <div class="card-header">
+        <img src="images/edit.png" alt="Edit user" width="25" height="25" @onclick="showEditModal" class="user-options-img">
+        <img src="images/delete.png" alt="Delete user" width="25" height="25" @onclick="showDeleteModal" class="user-options-img">
+    </div>
+    <div class="card-body">
+        <h2 class="card-title">@user.UserName</h2>
+        <h6 class="card-text"><b>Name:</b> @user.Name @user.Surnames</h6>
+        <h6 class="card-text"><b>Mail:</b> @user.Email</h6>
+        <br />
+        <label for="enable">enable</label>
+        <input type="checkbox" id="enable" name="enable" value="Enable" @bind="user.Enabled">
+        <br />
+        <br />
+        <a href="#" class="btn btn-primary" @onclick="makeUpdateRequest">Save</a>
+    </div>
+    <div class="card-footer text-muted">
+        <input type="checkbox" id="admin" @bind="isAdmin">
+        <label for="admin">Admin</label>
+        <input type="checkbox" id="user" @bind="isUser">
+        <label for="user">User</label>
+    </div>
+</div>
+
+@code {
+    [Parameter] public User user { get; set; }
+
+    [Parameter] public Action<int, User> UpdateUser { get; set; }
+
+    [Parameter] public Action<int> DeleteUser{ get; set; }
+
+    [CascadingParameter] public IModalService Modal { get; set; }
+
+    ModalParameters modalParameters { get; set; }
+
+    protected bool isAdmin { get; set; }
+    protected bool isUser { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Console.WriteLine(user.Roles.FindIndex(role => role.Id == 1));
+
+        if (user.Roles.Count > 0)
+        {
+            if (user.Roles.FindIndex(role => role.Name.Equals("ADMIN")) != -1)
+            {
+                isAdmin = true;
+            }
+            if (user.Roles.FindIndex(role => role.Name.Equals("USER")) != -1)
+            {
+                isUser = true;
+            }        }
+        Console.WriteLine(isUser);
+        StateHasChanged();
+    }
+
+    private void showEditModal()
+    {
+        modalParameters = new ModalParameters()
+        .Add("user", user)
+        .Add("updateUser", UpdateUser);
+
+        Modal.Show<EditUserModal>("Editar " + user.UserName, modalParameters);
+    }
+
+    private void showDeleteModal()
+    {
+
+        modalParameters = new ModalParameters()
+        .Add("userId", user.Id)
+        .Add("userName", user.UserName)
+        .Add("deleteUser", DeleteUser);
+
+        Modal.Show<DeleteModal>("Borrar a " + user.UserName, modalParameters);
+    }
+
+    public void makeUpdateRequest()
+    {
+        user.Roles.Clear();
+        if (isAdmin) { user.Roles.Add(new Role(1, "ADMIN")); }
+        if (isUser) { user.Roles.Add(new Role(2, "USER")); }
+
+        UpdateUser(user.Id, user);
+
+    }
+}

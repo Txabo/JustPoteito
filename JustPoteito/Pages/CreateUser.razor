@@ -1,0 +1,31 @@
+﻿@using JustPoteito.Models;
+
+@inject HttpClient client
+
+@if (errorMessage.Length > 0)
+{
+    <p class="error-message">@errorMessage</p>
+}
+
+<Create_Edit_User_Form CreateUser="createUserRequest" requestType="create"/>
+
+@code {
+    public string errorMessage { get; set; } = "";
+
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        errorMessage = "";
+    }
+    public async void createUserRequest(User user)
+    {
+        var response = await client.PostAsJsonAsync(Endpoints.CreateUser(), user);        if (response.IsSuccessStatusCode)
+        {
+            await response.Content.ReadFromJsonAsync<UserResponse>();
+        }
+        else
+        {
+            errorMessage = "User could not be created";
+        }    }
+}

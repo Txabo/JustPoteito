@@ -1,0 +1,14 @@
+﻿@using JustPoteito.Models;
+
+<Create_Edit_User_Form user="user" UpdateUser="UpdateUser" requestType="update" BlazoredModal="BlazoredModal" />
+
+@code {
+
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+    [Parameter] public User user { get; set; }
+    [Parameter] public Action<int, User> UpdateUser { get; set; }
+
+    private async Task Close() => await BlazoredModal.CloseAsync();
+    
+}

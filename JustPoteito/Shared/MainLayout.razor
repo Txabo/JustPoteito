@@ -1,0 +1,109 @@
+﻿@using JustPoteito.Models;
+@inherits LayoutComponentBase
+@inject HttpClient client
+@using System.Text.Json;
+@using System.Text.Json.Serialization;
+@using System.Net;
+@using System.Text;
+
+<div class="page">
+
+    @if (showNavBar) {
+        <Navbar></Navbar>
+    }
+
+    <CascadingValue Value="appState">
+        <DynamicComponent Type="selectedComponent"/>
+    </CascadingValue>
+
+    @if (errorMessage.Length > 0)
+    {
+        <p class="error-message">@errorMessage</p>
+    }
+</div>
+
+@code {
+    protected bool showNavBar { get; set; }
+
+    AppState appState = new AppState();
+    private Type selectedComponent { get; set; }
+    string errorMessage = "";
+
+    protected override void OnInitialized()
+    {
+        selectedComponent = Type.GetType($"JustPoteito.Pages.Login");
+        appState.ActionWithParameters = ChildComponentParameterHandler;
+    }
+
+    private async void ChildComponentParameterHandler(Dictionary<string, object> dictionaryParams)
+    {
+
+        bool access = true;
+
+        if (dictionaryParams.ContainsKey("mail") && dictionaryParams.ContainsKey("password"))
+        {
+            UserResponse userResponse = await MakeLoginRequest((string) dictionaryParams["mail"], (string) dictionaryParams["password"]);
+            if (userResponse == null) { 
+                access = false; 
+            }
+            else
+            {
+                User checkLoggedUserRole = await client.GetFromJsonAsync<User>(Endpoints.GetUserById(userResponse.id));
+
+                if (checkLoggedUserRole.Roles.FindIndex(role => role.Name.Equals("ADMIN")) == -1)
+                {
+                    access = false;
+                }
+
+            }
+        }
+
+        if (access)
+        {
+            errorMessage = "";
+            foreach (var param in dictionaryParams)
+            {
+                if (param.Key.Equals("showNavigation"))
+                {
+                    showNavBar = (bool)param.Value;
+                }
+
+                if (param.Key.Equals("target-component"))
+                {
+                    selectedComponent = Type.GetType($"JustPoteito.Pages." + param.Value);
+                }
+
+                StateHasChanged();
+            }
+        }
+        else
+        {
+            errorMessage = "This user is not an admin";
+            StateHasChanged();
+        }
+
+    }
+
+    protected async Task<UserResponse> MakeLoginRequest(string mail, string password)
+    {
+        var response = await client.PostAsJsonAsync("http://localhost:8080/api/auth/login", new UserForm(mail, password));
+
+        if (response.IsSuccessStatusCode)
+        {
+            return await response.Content.ReadFromJsonAsync<UserResponse>();
+        }
+        else
+        {
+            if ( ((int) response.StatusCode) == 401)
+            {
+                errorMessage = "Login credentials are not valid";
+            }
+            else
+            {
+                errorMessage = "There was an unexpected error";
+            }
+
+            return null;
+        }
+    }
+}

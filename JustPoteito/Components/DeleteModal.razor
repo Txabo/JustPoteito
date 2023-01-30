@@ -1,0 +1,22 @@
+﻿@using JustPoteito.Models;
+
+<h5>¿Estás seguro/a de qué deseas eliminar a @userName?</h5>
+
+<button class="btn btn-danger" @onclick="deleteEvent">Eliminar</button>
+<button class="btn" @onclick="Close">Cancelar</button>
+
+@code {
+    [CascadingParameter] BlazoredModalInstance BlazoredModal { get; set; } = default!;
+
+    [Parameter] public string userName { get; set; }
+    [Parameter] public int userId { get; set; }
+    [Parameter] public Action<int> DeleteUser { get; set; }
+
+    private async Task Close() => await BlazoredModal.CloseAsync();
+
+    private async void deleteEvent()
+    {
+        DeleteUser(userId);
+        await Close();
+    }
+}

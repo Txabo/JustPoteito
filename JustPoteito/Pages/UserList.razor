@@ -1,0 +1,131 @@
+﻿@using JustPoteito.Components
+@using JustPoteito.Models;
+@using JustPoteito;
+@inject HttpClient Client;
+@inject NavigationManager NavManager;
+
+<PageTitle>All users</PageTitle>
+
+<div>
+    @if (users.Count > 0)
+    {
+        @for (int i = paginationParameters.firstElement; i <= paginationParameters.lastElement; i++)
+        {
+            <div>
+                <GetUsers user="@users[i]" UpdateUser="UpdateUser" DeleteUser="DeleteUser" />
+            </div>
+        }
+
+        <div class="d-flex justify-content-around paginate-button-container">
+            @if (!isFirstPage)
+            {
+                <button class="btn btn-primary btn-prev" @onclick="previousPage">Previous</button>
+            } 
+            @if (!isLastPage)
+            {
+                <button class="btn btn-primary btn-next" @onclick="nextPage">Next</button>
+            }
+        </div>
+    }
+</div>
+
+@*@if (selectedUser.Id != null)
+{
+    <div>
+        <div class="row">
+            <GetUsersGrid UserName="@user.UserName" Name="@user.Name" Surnames="@user.Surnames" Email="@user.Email" />
+        </div>
+    </div>
+}*@
+
+@code {
+    private User clickedUser = new User();
+    private List<User> users = new List<User>();
+    public PaginationParameters paginationParameters { get; set; }
+    public bool isFirstPage { get; set; } = false;
+    public bool isLastPage { get; set; } = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetUsers();
+        paginationParameters = new PaginationParameters();
+        setPaginationInitialValues();
+        paginateUsers();
+    }
+
+    private async Task GetUsers()
+    {
+        users = await Client.GetFromJsonAsync<List<User>>(Endpoints.GetUsers());
+        Console.WriteLine(users[0].UserName + " " + users[0].Roles[0].Name);
+    }
+
+    private void setPaginationInitialValues()
+    {
+
+        isFirstPage = true;
+        paginationParameters.pageSize = 2;
+        paginationParameters.actualPage = 1;
+
+        paginationParameters.totalPages = users.Count / paginationParameters.pageSize;
+
+        if (users.Count % paginationParameters.pageSize > 0)
+        {
+            paginationParameters.totalPages += 1;
+        }
+    }
+
+    private void paginateUsers()
+    {
+
+        isLastPage = (paginationParameters.actualPage >= paginationParameters.totalPages) ? true : false;
+        isFirstPage = (paginationParameters.actualPage <= 1) ? true : false;
+
+        paginationParameters.firstElement = paginationParameters.pageSize * (paginationParameters.actualPage - 1);
+
+        if (paginationParameters.actualPage == paginationParameters.totalPages
+            && users.Count % paginationParameters.pageSize > 0)
+        {
+            paginationParameters.lastElement = paginationParameters.firstElement + (users.Count % paginationParameters.pageSize) - 1;
+        } else
+        {
+            paginationParameters.lastElement = paginationParameters.firstElement + paginationParameters.pageSize - 1;
+        }
+
+        StateHasChanged();
+    }
+
+    public void nextPage()
+    {
+        if (paginationParameters.actualPage < paginationParameters.totalPages)
+        {
+            paginationParameters.actualPage += 1;
+            paginateUsers();
+        }
+    }
+
+    public void previousPage()
+    {
+        if (paginationParameters.actualPage > 1)
+        {
+            paginationParameters.actualPage -= 1;
+            paginateUsers();
+        }
+    }
+
+    protected async void UpdateUser(int id, User updateUser)
+    {
+        using var response = await Client.PutAsJsonAsync(Endpoints.UpdateUser(id), updateUser);
+        await GetUsers();
+        setPaginationInitialValues();
+        paginateUsers();
+    }
+
+
+    protected async void DeleteUser(int userId)
+    {.
+        await Client.PostAsJsonAsync(Endpoints.DeleteUser(userId), "");
+        await GetUsers();
+        setPaginationInitialValues();
+        paginateUsers();
+    }
+}

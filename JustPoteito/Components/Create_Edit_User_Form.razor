@@ -1,0 +1,95 @@
+﻿@using JustPoteito.Models;
+
+
+<EditForm EditContext=@editContext OnValidSubmit=@OnValidSubmit class="edit-create-form">
+    <div class="d-flex justify-content-center logo-container">
+        <div class="mx-auto login-logo">
+            <img src="images/logo.png" />
+        </div>
+    </div>
+    <DataAnnotationsValidator />
+    <div class="form-group mt-2">
+        <div>
+            <InputText placeholder="Name" @bind-Value="@user.Name" class="form-control col-sm-3" />
+            <ValidationMessage For="@(() => user.Name)" />
+        </div>
+    </div>
+    <div class="form-group mt-2">
+        <div>
+            <InputText placeholder="Surnames" @bind-Value="@user.Surnames" class="form-control col-sm-3" />
+            <ValidationMessage For="@(() => user.Surnames)" />
+        </div>
+    </div>
+    <div class="form-group mt-2">
+        <div>
+            <InputText placeholder="User Name" @bind-Value="@user.UserName" class="form-control col-sm-3" />
+            <ValidationMessage For="@(() => user.UserName)" />
+        </div>
+    </div>
+    <div class="form-group mt-2">
+        <div>
+            <InputText placeholder="Email" @bind-Value="@user.Email" class="form-control col-sm-3" />
+            <ValidationMessage For="@(() => user.Email)" />
+        </div>
+    </div>
+    @if (requestType.Equals("create"))
+    {
+        <div class="form-group mt-2">
+            <div>
+                <InputText type="password" placeholder="Password" @bind-Value="@user.Password" class="form-control col-sm-3" />
+                <ValidationMessage For="@(() => user.Password)" />
+            </div>
+        </div>
+    }
+
+    <div class="form-group mt-2">
+        <div>
+            <InputSelect @bind-Value="@user.Roles">
+            @foreach (Role role in user.Roles)
+            {
+                    <option value=@role>@role</option>
+            }
+            </InputSelect>
+            <ValidationMessage For="@(() => user.UserName)" />
+        </div>
+    </div>  
+
+    <div class="submit-button-container">
+        <button type="submit" class="btn btn-success mt-4">
+            <img class="submit-icon" src="images/right-arrow.svg" />
+        </button>
+    </div>
+</EditForm>
+
+@code {
+    [Parameter] public User? user { get; set; }
+    [Parameter] public Action<int, User>? UpdateUser { get; set; }
+    [Parameter] public Action<User>? CreateUser { get; set; }
+    [Parameter] public string requestType { get; set; }
+    [Parameter] public BlazoredModalInstance? BlazoredModal { get; set; }
+
+    protected EditContext editContext;
+
+    protected override void OnInitialized()
+    {
+        editContext = new(user);
+        Console.WriteLine(user.Enabled);
+    }
+
+    protected async void OnValidSubmit()
+    {
+        Console.WriteLine("Entro");
+        editContext.Validate();
+
+        if (requestType.Equals("create"))
+        {
+            CreateUser(user);
+        }
+        else if (requestType.Equals("update"))
+        {
+            Console.WriteLine("Hola");
+            await BlazoredModal.CloseAsync();
+            UpdateUser(user.Id, user);
+        }
+    }
+}
