@@ -3,6 +3,7 @@
 @using JustPoteito;
 @inject HttpClient Client;
 @inject NavigationManager NavManager;
+@inject IJSRuntime Js;
 
 <PageTitle>All users</PageTitle>
 
@@ -130,8 +131,9 @@
 
     protected async void UpdateUser(int id, User updateUser)
     {
-        Console.WriteLine("Llego a la petición");
+
         using var response = await Client.PutAsJsonAsync(Endpoints.UpdateUser(id), updateUser);
+        await Js.InvokeAsync<string>("showMessage", "User updated");
         await GetUsers();
         setPaginationInitialValues();
         paginateUsers();

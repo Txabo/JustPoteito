@@ -2,6 +2,7 @@
 @using System.Net.Http.Json;
 @using JustPoteito;
 @inject HttpClient client
+@inject IJSRuntime Js
 
 @if (errorMessage.Length > 0)
 {
@@ -27,6 +28,7 @@
 
         if (response.IsSuccessStatusCode)
         {
+            await Js.InvokeAsync<string>("showMessage", "User created");
             await response.Content.ReadFromJsonAsync<UserResponse>();
         }
         else
