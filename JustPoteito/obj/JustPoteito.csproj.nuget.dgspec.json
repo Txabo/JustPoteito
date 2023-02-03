@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\JustPoteito.csproj": {}
+    "C:\\Users\\in2dm3-v\\Source\\Repos\\Txabo\\JustPoteito\\JustPoteito\\JustPoteito.csproj": {}
   },
   "projects": {
-    "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\JustPoteito.csproj": {
+    "C:\\Users\\in2dm3-v\\Source\\Repos\\Txabo\\JustPoteito\\JustPoteito\\JustPoteito.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\JustPoteito.csproj",
+        "projectUniqueName": "C:\\Users\\in2dm3-v\\Source\\Repos\\Txabo\\JustPoteito\\JustPoteito\\JustPoteito.csproj",
         "projectName": "JustPoteito",
-        "projectPath": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\JustPoteito.csproj",
-        "packagesPath": "C:\\Users\\txabe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\obj\\",
+        "projectPath": "C:\\Users\\in2dm3-v\\Source\\Repos\\Txabo\\JustPoteito\\JustPoteito\\JustPoteito.csproj",
+        "packagesPath": "C:\\Users\\in2dm3-v\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\in2dm3-v\\Source\\Repos\\Txabo\\JustPoteito\\JustPoteito\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\txabe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\in2dm3-v\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -72,7 +72,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[6.0.11, 6.0.11]"
+              "version": "[6.0.13, 6.0.13]"
             }
           ],
           "frameworkReferences": {
@@ -80,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

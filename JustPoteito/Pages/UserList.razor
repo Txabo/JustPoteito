@@ -133,7 +133,7 @@
     {
 
         using var response = await Client.PutAsJsonAsync(Endpoints.UpdateUser(id), updateUser);
-        await Js.InvokeAsync<string>("showMessage", "User updated");
+        //await Js.InvokeAsync<string>("showMessage", "User updated");
         await GetUsers();
         setPaginationInitialValues();
         paginateUsers();

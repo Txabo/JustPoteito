@@ -28,7 +28,7 @@
 
         if (response.IsSuccessStatusCode)
         {
-            await Js.InvokeAsync<string>("showMessage", "User created");
+            //await Js.InvokeAsync<string>("showMessage", "User created");
             await response.Content.ReadFromJsonAsync<UserResponse>();
         }
         else

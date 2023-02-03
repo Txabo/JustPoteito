@@ -9,49 +9,53 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = JustPoteito
 build_property.RootNamespace = JustPoteito
-build_property.ProjectDir = C:\Users\in2dm3-v\Documents\Visual_Studio_Projects\JustPoteitoBlazor\JustPoteito\
+build_property.ProjectDir = C:\Users\in2dm3-v\Source\Repos\Txabo\JustPoteito\JustPoteito\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\in2dm3-v\Documents\Visual_Studio_Projects\JustPoteitoBlazor\JustPoteito
+build_property.MSBuildProjectDirectory = C:\Users\in2dm3-v\Source\Repos\Txabo\JustPoteito\JustPoteito
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/in2dm3-v/Documents/Visual_Studio_Projects/JustPoteitoBlazor/JustPoteito/App.razor]
+[C:/Users/in2dm3-v/Source/Repos/Txabo/JustPoteito/JustPoteito/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/in2dm3-v/Documents/Visual_Studio_Projects/JustPoteitoBlazor/JustPoteito/Components/Create_Edit_User_Form.razor]
+[C:/Users/in2dm3-v/Source/Repos/Txabo/JustPoteito/JustPoteito/Components/Create_Edit_User_Form.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDcmVhdGVfRWRpdF9Vc2VyX0Zvcm0ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/in2dm3-v/Documents/Visual_Studio_Projects/JustPoteitoBlazor/JustPoteito/Components/DeleteModal.razor]
+[C:/Users/in2dm3-v/Source/Repos/Txabo/JustPoteito/JustPoteito/Components/DeleteModal.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEZWxldGVNb2RhbC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/in2dm3-v/Documents/Visual_Studio_Projects/JustPoteitoBlazor/JustPoteito/Components/EditUserModal.razor]
+[C:/Users/in2dm3-v/Source/Repos/Txabo/JustPoteito/JustPoteito/Components/EditUserModal.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xFZGl0VXNlck1vZGFsLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/in2dm3-v/Documents/Visual_Studio_Projects/JustPoteitoBlazor/JustPoteito/Components/GetUsers.razor]
+[C:/Users/in2dm3-v/Source/Repos/Txabo/JustPoteito/JustPoteito/Components/GetUsers.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xHZXRVc2Vycy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/in2dm3-v/Documents/Visual_Studio_Projects/JustPoteitoBlazor/JustPoteito/Pages/Login.razor]
+[C:/Users/in2dm3-v/Source/Repos/Txabo/JustPoteito/JustPoteito/Pages/CreateUser.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlVXNlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/in2dm3-v/Source/Repos/Txabo/JustPoteito/JustPoteito/Pages/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/in2dm3-v/Documents/Visual_Studio_Projects/JustPoteitoBlazor/JustPoteito/Pages/UserList.razor]
+[C:/Users/in2dm3-v/Source/Repos/Txabo/JustPoteito/JustPoteito/Pages/UserList.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlckxpc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/in2dm3-v/Documents/Visual_Studio_Projects/JustPoteitoBlazor/JustPoteito/Shared/MainLayout.razor]
+[C:/Users/in2dm3-v/Source/Repos/Txabo/JustPoteito/JustPoteito/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/in2dm3-v/Documents/Visual_Studio_Projects/JustPoteitoBlazor/JustPoteito/Shared/Navbar.razor]
+[C:/Users/in2dm3-v/Source/Repos/Txabo/JustPoteito/JustPoteito/Shared/Navbar.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdmJhci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/in2dm3-v/Documents/Visual_Studio_Projects/JustPoteitoBlazor/JustPoteito/_Imports.razor]
+[C:/Users/in2dm3-v/Source/Repos/Txabo/JustPoteito/JustPoteito/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

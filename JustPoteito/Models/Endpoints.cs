@@ -20,17 +20,17 @@ namespace JustPoteito
 
         public static string CreateUser()
         {
-            return "http://localhost:8080/api/auth/users";
+            return "http://localhost:8080/api/notoken/createUser";
         }
 
         public static string UpdateUser(int userId)
         {
-            return $"http://localhost:8080/api/auth/users/{userId}";
+            return $"http://localhost:8080/api/notoken/update/{userId}";
         }
 
         public static string DeleteUser(int userId)
         {
-            return $"http://localhost:8080/api/auth/auth/{userId}";
+            return $"http://localhost:8080/api/notoken/delete/{userId}";
         }
     }
 }
