@@ -38,7 +38,7 @@
 
     protected EditContext editContext;
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
         editContext = new(user);
     }

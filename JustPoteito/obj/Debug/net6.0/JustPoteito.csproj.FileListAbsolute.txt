@@ -2450,12 +2450,3 @@ C:\Users\in2dm3-v\Documents\Visual_Studio_Projects\JustPoteitoBlazor\JustPoteito
 C:\Users\in2dm3-v\Documents\Visual_Studio_Projects\JustPoteitoBlazor\JustPoteito\bin\Debug\net6.0\wwwroot\_framework\Blazored.Modal.dll.gz
 C:\Users\in2dm3-v\Documents\Visual_Studio_Projects\JustPoteitoBlazor\JustPoteito\bin\Debug\net6.0\Blazored.Modal.dll
 C:\Users\in2dm3-v\Documents\Visual_Studio_Projects\JustPoteitoBlazor\JustPoteito\obj\Debug\net6.0\build-gz\CQSt15g6.gz
-C:\Users\txabe\OneDrive\Documents\Visual Studio Community Projects\JustPoteitoBlazor-genera_rework\JustPoteito\obj\Debug\net6.0\JustPoteito.csproj.AssemblyReference.cache
-C:\Users\txabe\OneDrive\Documents\Visual Studio Community Projects\JustPoteitoBlazor-genera_rework\JustPoteito\obj\Debug\net6.0\JustPoteito.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\txabe\OneDrive\Documents\Visual Studio Community Projects\JustPoteitoBlazor-genera_rework\JustPoteito\obj\Debug\net6.0\JustPoteito.AssemblyInfoInputs.cache
-C:\Users\txabe\OneDrive\Documents\Visual Studio Community Projects\JustPoteitoBlazor-genera_rework\JustPoteito\obj\Debug\net6.0\JustPoteito.AssemblyInfo.cs
-C:\Users\txabe\OneDrive\Documents\Visual Studio Community Projects\JustPoteitoBlazor-genera_rework\JustPoteito\obj\Debug\net6.0\JustPoteito.csproj.CoreCompileInputs.cache
-C:\Users\txabe\OneDrive\Documents\Visual Studio Community Projects\JustPoteitoBlazor-genera_rework\JustPoteito\obj\Debug\net6.0\JustPoteito.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\txabe\OneDrive\Documents\Visual Studio Community Projects\JustPoteitoBlazor-genera_rework\JustPoteito\obj\Debug\net6.0\JustPoteito.dll
-C:\Users\txabe\OneDrive\Documents\Visual Studio Community Projects\JustPoteitoBlazor-genera_rework\JustPoteito\obj\Debug\net6.0\refint\JustPoteito.dll
-C:\Users\txabe\OneDrive\Documents\Visual Studio Community Projects\JustPoteitoBlazor-genera_rework\JustPoteito\obj\Debug\net6.0\JustPoteito.pdb

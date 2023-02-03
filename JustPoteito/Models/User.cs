@@ -27,10 +27,10 @@ namespace JustPoteito.Models
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-        [Required]
+        //[Required]
         public bool Enabled { get; set; }
 
-        [Required]
+        //[Required]
         public List<Role> Roles { get; set; }
 
         public User()
@@ -51,6 +51,8 @@ namespace JustPoteito.Models
 
         //[Required(ErrorMessage = "Role is required")]
         //public List<Role>? Roles { get; set; }
+
+
 
 
     }

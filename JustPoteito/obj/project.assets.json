@@ -2,6 +2,24 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "Blazor.SessionStorage/2.0.5": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "6.0.0",
+          "Microsoft.Extensions.Primitives": "6.0.0",
+          "Microsoft.JSInterop": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Blazor.SessionStorage.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Blazor.SessionStorage.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Blazored.Modal/7.1.0": {
         "type": "package",
         "dependencies": {
@@ -522,6 +540,24 @@
       }
     },
     "net6.0/browser-wasm": {
+      "Blazor.SessionStorage/2.0.5": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "6.0.0",
+          "Microsoft.Extensions.Primitives": "6.0.0",
+          "Microsoft.JSInterop": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Blazor.SessionStorage.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Blazor.SessionStorage.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Blazored.Modal/7.1.0": {
         "type": "package",
         "dependencies": {
@@ -1037,6 +1073,22 @@
     }
   },
   "libraries": {
+    "Blazor.SessionStorage/2.0.5": {
+      "sha512": "Ba4crqN0FFTUfDz1tE4rH+3NfSc9aVsX/fFzajMPtelYBsEu6zmewQhx1B/oWG0nr78WGrzXOUpaYyXxr6/clQ==",
+      "type": "package",
+      "path": "blazor.sessionstorage/2.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "blazor.sessionstorage.2.0.5.nupkg.sha512",
+        "blazor.sessionstorage.nuspec",
+        "lib/net6.0/Blazor.SessionStorage.dll",
+        "lib/net6.0/Blazor.SessionStorage.xml",
+        "logo.png"
+      ]
+    },
     "Blazored.Modal/7.1.0": {
       "sha512": "ft5bX5barhyzpQc9jjU029ByrAQXgqSMItwhmEbr0pb7r+of8XH0E/OyS8K6O6Disq5R+p4wpt+W+NGg3/OTMA==",
       "type": "package",
@@ -1818,6 +1870,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Blazor.SessionStorage >= 2.0.5",
       "Blazored.Modal >= 7.1.0",
       "Microsoft.AspNetCore.Components.WebAssembly >= 6.0.8",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 6.0.8"
@@ -1862,6 +1915,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Blazor.SessionStorage": {
+            "target": "Package",
+            "version": "[2.0.5, )"
+          },
           "Blazored.Modal": {
             "target": "Package",
             "version": "[7.1.0, )"

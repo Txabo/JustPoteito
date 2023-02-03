@@ -76,7 +76,23 @@ h1:focus {
 
 
 /***********NAVEGACIÓN************/
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #eec588b0;
+}
+
 nav {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    background-color: #ffd8b9b2;
+    color: #5f2731;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 6em;
+}
+
+.nav-links {
     margin-top: auto;
     padding: .5em .5em;
     background-color: #eec588b0;
@@ -102,16 +118,6 @@ nav {
     cursor: pointer;
 }
 
-.branding {
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-    background-color: #ffd8b9b2;
-    color: #5f2731;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    height: 6em;
-}
-
 .branding-logo {
     height: 6em;
     width: 10em;
@@ -122,9 +128,13 @@ nav {
     width: 100%;
 }
 
+.logout-button {
+    width: 5em;
+    color:
+}
+
 
 /********LOGIN FORM**********/
-
 .login-form {
     position: absolute;
     left: 50%;
@@ -239,7 +249,51 @@ nav {
     }
 }
 
+/***********NAVBAR*************/
+
+.logout-container {
+    background-color: #ffd8b9b2;
+}
+
+.logout-button {
+    font-weight: bold;
+    color: brown;
+    margin-top: 42%;
+}
+
+.logout-button:hover {
+    cursor: pointer;
+}
+
 /*************USERLIST*******************/
+
+.userTable {
+    width: 70%;
+    margin: 3em auto;
+}
+
+.userTable tr{
+    padding: 2em 0;
+    width: 100%;
+    border-bottom: 1px solid grey; 
+}
+
+.userTable td {
+    padding: 1em 0;
+    height: 100%;
+    width: 50%;
+    text-align: center;
+}
+
+.icon-td {
+    min-width: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.user-options-img {
+    margin-top: 3em;
+}
 
 .user-options-img:hover {
     cursor: pointer;
@@ -247,7 +301,25 @@ nav {
 
 .paginate-button-container {
     width: 10%;
-    margin: 0 auto;
+    margin: 0 auto 4em auto;
     height: fit-content;
+}
+
+.btn-paginate {
+    background-color: lightcoral;
+    color: white;
+}
+
+.btn-paginate:hover {
+    color: white;
+}
+
+.btn-save {
+    background-color: darkorange;
+    color: white;
+}
+
+.btn-save:hover {
+    color: white;
 }
 

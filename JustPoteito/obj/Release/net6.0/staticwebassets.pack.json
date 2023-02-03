@@ -1,83 +1,95 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\in2dm3-v\\Documents\\Visual_Studio_Projects\\JustPoteitoBlazor\\JustPoteito\\bin\\Release\\net6.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "Id": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\bin\\Release\\net6.0\\wwwroot\\_framework\\blazor.webassembly.js",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
     },
     {
-      "Id": "C:\\Users\\in2dm3-v\\Documents\\Visual_Studio_Projects\\JustPoteitoBlazor\\JustPoteito\\obj\\Release\\net6.0\\build-gz\\jI5rEq6y.gz",
+      "Id": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\obj\\Release\\net6.0\\build-gz\\Fc4B3fAK.gz",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
     },
     {
-      "Id": "C:\\Users\\in2dm3-v\\Documents\\Visual_Studio_Projects\\JustPoteitoBlazor\\JustPoteito\\wwwroot\\css\\app.css",
+      "Id": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\obj\\Release\\net6.0\\scopedcss\\bundle\\JustPoteito.styles.css",
+      "PackagePath": "staticwebassets\\JustPoteito.styles.css"
+    },
+    {
+      "Id": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },
     {
-      "Id": "C:\\Users\\in2dm3-v\\Documents\\Visual_Studio_Projects\\JustPoteitoBlazor\\JustPoteito\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Id": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\in2dm3-v\\Documents\\Visual_Studio_Projects\\JustPoteitoBlazor\\JustPoteito\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\in2dm3-v\\Documents\\Visual_Studio_Projects\\JustPoteitoBlazor\\JustPoteito\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "Id": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
       "PackagePath": "staticwebassets\\css\\open-iconic"
     },
     {
-      "Id": "C:\\Users\\in2dm3-v\\Documents\\Visual_Studio_Projects\\JustPoteitoBlazor\\JustPoteito\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "Id": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
       "PackagePath": "staticwebassets\\css\\open-iconic"
     },
     {
-      "Id": "C:\\Users\\in2dm3-v\\Documents\\Visual_Studio_Projects\\JustPoteitoBlazor\\JustPoteito\\wwwroot\\css\\open-iconic\\README.md",
+      "Id": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\wwwroot\\css\\open-iconic\\README.md",
       "PackagePath": "staticwebassets\\css\\open-iconic\\README.md"
     },
     {
-      "Id": "C:\\Users\\in2dm3-v\\Documents\\Visual_Studio_Projects\\JustPoteitoBlazor\\JustPoteito\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "Id": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\in2dm3-v\\Documents\\Visual_Studio_Projects\\JustPoteitoBlazor\\JustPoteito\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "Id": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
     },
     {
-      "Id": "C:\\Users\\in2dm3-v\\Documents\\Visual_Studio_Projects\\JustPoteitoBlazor\\JustPoteito\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "Id": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
     },
     {
-      "Id": "C:\\Users\\in2dm3-v\\Documents\\Visual_Studio_Projects\\JustPoteitoBlazor\\JustPoteito\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "Id": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
     },
     {
-      "Id": "C:\\Users\\in2dm3-v\\Documents\\Visual_Studio_Projects\\JustPoteitoBlazor\\JustPoteito\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "Id": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
     },
     {
-      "Id": "C:\\Users\\in2dm3-v\\Documents\\Visual_Studio_Projects\\JustPoteitoBlazor\\JustPoteito\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "Id": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
       "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
     },
     {
-      "Id": "C:\\Users\\in2dm3-v\\Documents\\Visual_Studio_Projects\\JustPoteitoBlazor\\JustPoteito\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\in2dm3-v\\Documents\\Visual_Studio_Projects\\JustPoteitoBlazor\\JustPoteito\\wwwroot\\icon-192.png",
+      "Id": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\wwwroot\\icon-192.png",
       "PackagePath": "staticwebassets\\icon-192.png"
     },
     {
-      "Id": "C:\\Users\\in2dm3-v\\Documents\\Visual_Studio_Projects\\JustPoteitoBlazor\\JustPoteito\\wwwroot\\images\\logo.png",
+      "Id": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\wwwroot\\images\\delete.png",
+      "PackagePath": "staticwebassets\\images\\delete.png"
+    },
+    {
+      "Id": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\wwwroot\\images\\edit.png",
+      "PackagePath": "staticwebassets\\images\\edit.png"
+    },
+    {
+      "Id": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\wwwroot\\images\\logo.png",
       "PackagePath": "staticwebassets\\images\\logo.png"
     },
     {
-      "Id": "C:\\Users\\in2dm3-v\\Documents\\Visual_Studio_Projects\\JustPoteitoBlazor\\JustPoteito\\wwwroot\\images\\right-arrow.svg",
+      "Id": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\wwwroot\\images\\right-arrow.svg",
       "PackagePath": "staticwebassets\\images\\right-arrow.svg"
     },
     {
-      "Id": "C:\\Users\\in2dm3-v\\Documents\\Visual_Studio_Projects\\JustPoteitoBlazor\\JustPoteito\\wwwroot\\index.html",
+      "Id": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "C:\\Users\\in2dm3-v\\Documents\\Visual_Studio_Projects\\JustPoteitoBlazor\\JustPoteito\\wwwroot\\javascript\\buttonAnimation.js",
+      "Id": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\wwwroot\\javascript\\buttonAnimation.js",
       "PackagePath": "staticwebassets\\javascript\\buttonAnimation.js"
     },
     {

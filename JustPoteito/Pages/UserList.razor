@@ -11,32 +11,45 @@
     {
         @for (int i = paginationParameters.firstElement; i <= paginationParameters.lastElement; i++)
         {
-            <div>
-                <GetUsers user="@users[i]" UpdateUser="UpdateUser" DeleteUser="DeleteUser" />
-            </div>
+
+            @if (users[i].Roles.Count > 0)
+            {
+                if (users[i].Roles.FindIndex(role => role.Name.Equals("ADMIN")) != -1)
+                {
+                    isAdmin = true;
+                }
+                else
+                {
+                    isAdmin = false;
+                }
+                if (users[i].Roles.FindIndex(role => role.Name.Equals("USER")) != -1)
+                {
+                    isUser = true;
+                }
+                else
+                {
+                    isUser = false;    
+                }
+            }    
+            
+            <table class="userTable">
+                <GetUsers user="@users[i]" UpdateUser="UpdateUser" DeleteUser="DeleteUser" isAdmin="isAdmin" isUser="isUser"/>
+            </table>
         }
 
         <div class="d-flex justify-content-around paginate-button-container">
             @if (!isFirstPage)
             {
-                <button class="btn btn-primary btn-prev" @onclick="previousPage">Previous</button>
+                <button class="btn btn-paginate" @onclick="previousPage">Previous</button>
             } 
             @if (!isLastPage)
             {
-                <button class="btn btn-primary btn-next" @onclick="nextPage">Next</button>
+                <button class="btn btn-paginate" @onclick="nextPage">Next</button>
             }
         </div>
     }
 </div>
 
-@*@if (selectedUser.Id != null)
-{
-    <div>
-        <div class="row">
-            <GetUsersGrid UserName="@user.UserName" Name="@user.Name" Surnames="@user.Surnames" Email="@user.Email" />
-        </div>
-    </div>
-}*@
 
 @code {
     private User clickedUser = new User();
@@ -45,9 +58,13 @@
     public bool isFirstPage { get; set; } = false;
     public bool isLastPage { get; set; } = false;
 
+    protected bool isAdmin { get; set; }
+    protected bool isUser { get; set; }
+
     protected override async Task OnInitializedAsync()
     {
         await GetUsers();
+
         paginationParameters = new PaginationParameters();
         setPaginationInitialValues();
         paginateUsers();
@@ -56,14 +73,13 @@
     private async Task GetUsers()
     {
         users = await Client.GetFromJsonAsync<List<User>>(Endpoints.GetUsers());
-        Console.WriteLine(users[0].UserName + " " + users[0].Roles[0].Name);
     }
 
     private void setPaginationInitialValues()
     {
 
         isFirstPage = true;
-        paginationParameters.pageSize = 2;
+        paginationParameters.pageSize = 5;
         paginationParameters.actualPage = 1;
 
         paginationParameters.totalPages = users.Count / paginationParameters.pageSize;
@@ -114,6 +130,7 @@
 
     protected async void UpdateUser(int id, User updateUser)
     {
+        Console.WriteLine("Llego a la petición");
         using var response = await Client.PutAsJsonAsync(Endpoints.UpdateUser(id), updateUser);
         await GetUsers();
         setPaginationInitialValues();
@@ -122,7 +139,7 @@
 
 
     protected async void DeleteUser(int userId)
-    {.
+    {
         await Client.PostAsJsonAsync(Endpoints.DeleteUser(userId), "");
         await GetUsers();
         setPaginationInitialValues();

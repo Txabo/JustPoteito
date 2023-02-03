@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "dl9tgO1xFIzn/6g0KnOMPk5dWbftJzEo9hkODJnSmWYkyVw0p578qIV71wJxgaqTkdcsvMnGQNQNulGuLc7szQ==",
+  "dgSpecHash": "o6b3ODHHqJm36lYMCaEL9muFWJNq9TF46eC9eJxwpeTHAsWCMVZShAefGPnwP+4xxrKPltw6AM4OPczwTr8RHw==",
   "success": true,
   "projectFilePath": "C:\\Users\\txabe\\OneDrive\\Documents\\Visual Studio Community Projects\\JustPoteitoBlazor-genera_rework\\JustPoteito\\JustPoteito.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\txabe\\.nuget\\packages\\blazor.sessionstorage\\2.0.5\\blazor.sessionstorage.2.0.5.nupkg.sha512",
     "C:\\Users\\txabe\\.nuget\\packages\\blazored.modal\\7.1.0\\blazored.modal.7.1.0.nupkg.sha512",
     "C:\\Users\\txabe\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.8\\microsoft.aspnetcore.authorization.6.0.8.nupkg.sha512",
     "C:\\Users\\txabe\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.8\\microsoft.aspnetcore.components.6.0.8.nupkg.sha512",

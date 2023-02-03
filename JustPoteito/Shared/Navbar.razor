@@ -1,9 +1,26 @@
-<div class="branding top-row d-flex">
+<div class="navBar top-row d-flex">
+        <nav>
         <div class="branding-logo">
             <img src="images/logo.png"/>
         </div>
-        <nav>
-            <a class="nav-item">List Users</a>
-            <a class="nav-item">Add User</a>
+        <div class="nav-links">
+            <a class="nav-item" @onclick='(() => TabOnClick("list_users"))'>List Users</a>
+            <a class="nav-item" @onclick='(() => TabOnClick("create_user"))'>Add User</a>
+        </div>
         </nav>
+        <div class="logout-container">
+            <p class="logout-button" @onclick="logOut">Log out</p>
+        </div>
 </div>
+
+@code {
+    [Parameter] public Action<string>? TabOnClick { get; set; }
+    [Parameter] public ISessionStorageService sessionStorage { get; set; }
+
+    public async void logOut()
+    {
+        await sessionStorage.ClearAsync();
+        TabOnClick("login");
+    }
+
+}

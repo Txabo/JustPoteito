@@ -1,28 +1,32 @@
 ﻿@using JustPoteito.Models;
 
-<div class="card text-center userCard mb-4">
-    <div class="card-header">
-        <img src="images/edit.png" alt="Edit user" width="25" height="25" @onclick="showEditModal" class="user-options-img">
-        <img src="images/delete.png" alt="Delete user" width="25" height="25" @onclick="showDeleteModal" class="user-options-img">
-    </div>
-    <div class="card-body">
+<tr class=" mb-4">
+
+    <td class="">
         <h2 class="card-title">@user.UserName</h2>
         <h6 class="card-text"><b>Name:</b> @user.Name @user.Surnames</h6>
         <h6 class="card-text"><b>Mail:</b> @user.Email</h6>
-        <br />
-        <label for="enable">enable</label>
-        <input type="checkbox" id="enable" name="enable" value="Enable" @bind="user.Enabled">
-        <br />
-        <br />
-        <a href="#" class="btn btn-primary" @onclick="makeUpdateRequest">Save</a>
-    </div>
-    <div class="card-footer text-muted">
+        
+    </td>
+    <td class="text-muted">
         <input type="checkbox" id="admin" @bind="isAdmin">
         <label for="admin">Admin</label>
         <input type="checkbox" id="user" @bind="isUser">
         <label for="user">User</label>
-    </div>
-</div>
+        <br />
+        <br />
+        <label for="enable">Enabled</label>
+        <input type="checkbox" id="enable" name="enable" value="Enable" @bind="user.Enabled">
+        <br />
+        <br />
+        <a href="#" class="btn btn-save" @onclick="makeUpdateRequest">Save</a>
+    </td>
+
+    <td class="icon-td">
+        <img src="images/edit.png" alt="Edit user" width="25" height="25" @onclick="showEditModal" class="user-options-img">
+        <img src="images/delete.png" alt="Delete user" width="25" height="25" @onclick="showDeleteModal" class="user-options-img">
+    </td>
+</tr>
 
 @code {
     [Parameter] public User user { get; set; }
@@ -35,24 +39,17 @@
 
     ModalParameters modalParameters { get; set; }
 
-    protected bool isAdmin { get; set; }
-    protected bool isUser { get; set; }
+    [Parameter]
+    public bool isAdmin { get; set; } = false;
+    [Parameter]
+    public bool isUser { get; set; } = false;
 
     protected override void OnInitialized()
     {
         Console.WriteLine(user.Roles.FindIndex(role => role.Id == 1));
 
-        if (user.Roles.Count > 0)
-        {
-            if (user.Roles.FindIndex(role => role.Name.Equals("ADMIN")) != -1)
-            {
-                isAdmin = true;
-            }
-            if (user.Roles.FindIndex(role => role.Name.Equals("USER")) != -1)
-            {
-                isUser = true;
-            }        }
-        Console.WriteLine(isUser);
+
+
         StateHasChanged();
     }
 

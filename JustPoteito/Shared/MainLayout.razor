@@ -1,6 +1,7 @@
 ﻿@using JustPoteito.Models;
 @inherits LayoutComponentBase
 @inject HttpClient client
+@inject ISessionStorageService sessionStorage
 @using System.Text.Json;
 @using System.Text.Json.Serialization;
 @using System.Net;
@@ -9,7 +10,7 @@
 <div class="page">
 
     @if (showNavBar) {
-        <Navbar></Navbar>
+        <Navbar TabOnClick="MenuTabOnClick" sessionStorage="sessionStorage"></Navbar>
     }
 
     <CascadingValue Value="appState">
@@ -26,12 +27,22 @@
     protected bool showNavBar { get; set; }
 
     AppState appState = new AppState();
-    private Type selectedComponent { get; set; }
+    private Type? selectedComponent { get; set; } = Type.GetType($"JustPoteito.Pages.Login");
     string errorMessage = "";
 
-    protected override void OnInitialized()
+
+    protected override async Task OnInitializedAsync()
     {
-        selectedComponent = Type.GetType($"JustPoteito.Pages.Login");
+        if (await sessionStorage.GetItemAsync("logged") == null)
+        {
+            selectedComponent = Type.GetType($"JustPoteito.Pages.Login");
+        }
+        else
+        {
+            selectedComponent = Type.GetType($"JustPoteito.Pages.UserList");
+            showNavBar = true;
+        }
+
         appState.ActionWithParameters = ChildComponentParameterHandler;
     }
 
@@ -43,7 +54,8 @@
         if (dictionaryParams.ContainsKey("mail") && dictionaryParams.ContainsKey("password"))
         {
             UserResponse userResponse = await MakeLoginRequest((string) dictionaryParams["mail"], (string) dictionaryParams["password"]);
-            if (userResponse == null) { 
+            if (userResponse == null) {
+                errorMessage = "Invalid email or password";
                 access = false; 
             }
             else
@@ -78,7 +90,10 @@
         }
         else
         {
-            errorMessage = "This user is not an admin";
+            if (errorMessage.Length == 0)
+            {
+                errorMessage = "This user is not an admin";
+            }
             StateHasChanged();
         }
 
@@ -86,10 +101,11 @@
 
     protected async Task<UserResponse> MakeLoginRequest(string mail, string password)
     {
-        var response = await client.PostAsJsonAsync("http://localhost:8080/api/auth/login", new UserForm(mail, password));
+        var response = await client.PostAsJsonAsync(Endpoints.Login(), new UserForm(mail, password));
 
         if (response.IsSuccessStatusCode)
         {
+            await sessionStorage.SetItemAsync("logged", "true");
             return await response.Content.ReadFromJsonAsync<UserResponse>();
         }
         else
@@ -105,5 +121,27 @@
 
             return null;
         }
+    }
+
+    public async void MenuTabOnClick(string target_tab)
+    {
+        switch (target_tab)
+        {
+            case "create_user":
+                selectedComponent = Type.GetType($"JustPoteito.Pages.CreateUser");
+
+                break;
+
+            case "list_users":
+                selectedComponent = Type.GetType($"JustPoteito.Pages.UserList");
+                break;
+
+            case "login":
+                selectedComponent = Type.GetType($"JustPoteito.Pages.Login");
+                showNavBar = false;
+                break;
+        }
+
+        StateHasChanged();
     }
 }

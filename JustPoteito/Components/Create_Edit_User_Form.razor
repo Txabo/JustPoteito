@@ -1,58 +1,60 @@
 ﻿@using JustPoteito.Models;
 
 
-<EditForm EditContext=@editContext OnValidSubmit=@OnValidSubmit class="edit-create-form">
+<EditForm Model=@user OnValidSubmit=@OnValidSubmit class="edit-create-form">
     <div class="d-flex justify-content-center logo-container">
         <div class="mx-auto login-logo">
             <img src="images/logo.png" />
         </div>
     </div>
     <DataAnnotationsValidator />
-    <div class="form-group mt-2">
+    <div class="form-group mt-2 col-8 mx-auto">
         <div>
             <InputText placeholder="Name" @bind-Value="@user.Name" class="form-control col-sm-3" />
             <ValidationMessage For="@(() => user.Name)" />
         </div>
     </div>
-    <div class="form-group mt-2">
+    <div class="form-group mt-2 col-8 mx-auto">
         <div>
             <InputText placeholder="Surnames" @bind-Value="@user.Surnames" class="form-control col-sm-3" />
             <ValidationMessage For="@(() => user.Surnames)" />
         </div>
     </div>
-    <div class="form-group mt-2">
+    <div class="form-group mt-2 col-8 mx-auto">
         <div>
             <InputText placeholder="User Name" @bind-Value="@user.UserName" class="form-control col-sm-3" />
             <ValidationMessage For="@(() => user.UserName)" />
         </div>
     </div>
-    <div class="form-group mt-2">
+    <div class="form-group mt-2 col-8 mx-auto">
         <div>
             <InputText placeholder="Email" @bind-Value="@user.Email" class="form-control col-sm-3" />
             <ValidationMessage For="@(() => user.Email)" />
         </div>
     </div>
+
+    <div class="form-group mt-2 col-8 mx-auto">
+        <div>
+            <InputText type="password" placeholder="Password" @bind-Value="@user.Password" class="form-control col-sm-3" />
+            <ValidationMessage For="@(() => user.Password)" />
+        </div>
+    </div>
+
     @if (requestType.Equals("create"))
     {
-        <div class="form-group mt-2">
-            <div>
-                <InputText type="password" placeholder="Password" @bind-Value="@user.Password" class="form-control col-sm-3" />
-                <ValidationMessage For="@(() => user.Password)" />
-            </div>
+        <div class="col-5 mx-auto text-center mt-3">
+            <label for="enable">Enabled</label>
+            <input type="checkbox" id="enable" name="enable" value="Enable" @bind="user.Enabled">
+        </div>
+        <br />
+        <div class="col-8 mx-auto text-center mt-2">
+            <input type="checkbox" id="admin" @bind="isAdmin">
+            <label for="admin">Admin</label>
+            <input type="checkbox" id="user" @bind="isUser">
+            <label for="user">User</label>
         </div>
     }
 
-    <div class="form-group mt-2">
-        <div>
-            <InputSelect @bind-Value="@user.Roles">
-            @foreach (Role role in user.Roles)
-            {
-                    <option value=@role>@role</option>
-            }
-            </InputSelect>
-            <ValidationMessage For="@(() => user.UserName)" />
-        </div>
-    </div>  
 
     <div class="submit-button-container">
         <button type="submit" class="btn btn-success mt-4">
@@ -62,34 +64,40 @@
 </EditForm>
 
 @code {
-    [Parameter] public User? user { get; set; }
+    [Parameter] public User? user { get; set; } = new User();
     [Parameter] public Action<int, User>? UpdateUser { get; set; }
     [Parameter] public Action<User>? CreateUser { get; set; }
     [Parameter] public string requestType { get; set; }
-    [Parameter] public BlazoredModalInstance? BlazoredModal { get; set; }
+    [Parameter] public Action? close { get; set; }
 
-    protected EditContext editContext;
+    protected bool isAdmin { get; set; } 
+    protected bool isUser { get; set; }
 
     protected override void OnInitialized()
     {
-        editContext = new(user);
-        Console.WriteLine(user.Enabled);
-    }
-
-    protected async void OnValidSubmit()
-    {
-        Console.WriteLine("Entro");
-        editContext.Validate();
 
         if (requestType.Equals("create"))
         {
-            CreateUser(user);
+            user.Roles = new List<Role>();
+        }
+
+        StateHasChanged();
+    }
+
+    protected void OnValidSubmit()
+    {
+
+        if (requestType.Equals("create"))
+        {
+            if (isAdmin) { user.Roles.Add(new Role(1, "ADMIN")); }
+            if (isUser) { user.Roles.Add(new Role(2, "USER")); }
+            CreateUser(user);  
         }
         else if (requestType.Equals("update"))
         {
-            Console.WriteLine("Hola");
-            await BlazoredModal.CloseAsync();
             UpdateUser(user.Id, user);
+            close();
+
         }
     }
 }
